@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: stg_sf__accounts
+    columns:
+      - name: account_id
+        tests: [unique, not_null]
+  - name: stg_sf__opportunities
+    columns:
+      - name: opportunity_id
+        tests: [unique, not_null]
+      - name: account_id
+        tests:
+          - relationships: {to: ref('stg_sf__accounts'), field: account_id, severity: warn}
+  - name: fct_open_pipeline_by_stage
+    columns:
+      - name: stage_name
+        tests: [unique, not_null]
+  - name: dim_account_health
+    columns:
+      - name: account_id
+        tests: [unique, not_null]

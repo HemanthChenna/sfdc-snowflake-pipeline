@@ -1,0 +1,8 @@
+name: sfdc_analytics
+version: "1.0.0"
+profile: sfdc_analytics
+model-paths: ["models"]
+models:
+  sfdc_analytics:
+    staging: {+schema: STAGING, +materialized: incremental}
+    marts:   {+schema: MARTS,   +materialized: table}

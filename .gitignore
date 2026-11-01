@@ -1,0 +1,14 @@
+.env
+.venv/
+state/
+target/
+dbt/target/
+dbt/logs/
+logs/
+__pycache__/
+.pytest_cache/
+*.ndjson
+test_login.py
+diagnose.py
+refresh_token.py
+seed.apex

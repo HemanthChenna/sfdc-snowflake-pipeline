@@ -1,0 +1,12 @@
+version: 2
+sources:
+  - name: salesforce_raw
+    database: SF_ANALYTICS
+    schema: RAW
+    tables:
+      - name: sf_account
+        loaded_at_field: _loaded_at
+        freshness: {warn_after: {count: 24, period: hour}, error_after: {count: 48, period: hour}}
+      - name: sf_opportunity
+        loaded_at_field: _loaded_at
+        freshness: {warn_after: {count: 24, period: hour}, error_after: {count: 48, period: hour}}
